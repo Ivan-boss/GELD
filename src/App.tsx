@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { IntlProvider } from "react-intl";
+import { ToastContainer, Flip } from "react-toastify";
+
+import { frMessage } from "./languages/fr/index";
+import { enMessage } from "./languages/en-us/index";
+import { ThemeProvider } from "@mui/material/styles";
+import { useLanguage } from "./contexts/Language/Language.provider";
+import theme from "./theme/theme";
+import { useRoutes } from "react-router";
+import { routes } from "./routes/routes";
 
 function App() {
+  const routing = useRoutes(routes);
+  const { languageState } = useLanguage();
+  const activeMessage = languageState === "fr" ? frMessage : enMessage;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <IntlProvider
+      messages={activeMessage}
+      locale={languageState}
+      defaultLocale="fr"
+    >
+      <ThemeProvider theme={theme}>
+        <ToastContainer
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          transition={Flip}
+        />
+        {routing}
+      </ThemeProvider>
+    </IntlProvider>
   );
 }
 
