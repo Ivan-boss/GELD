@@ -1,6 +1,6 @@
 import { Button, Typography, Box } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import { injectIntl, useIntl } from "react-intl";
+import { useIntl } from "react-intl";
 import logo from "../assets/images/logo.png";
 import googleIcon from "../assets/images/google-icon.png";
 

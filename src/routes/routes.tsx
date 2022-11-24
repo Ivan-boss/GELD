@@ -1,4 +1,5 @@
 import { Navigate } from "react-router";
+import WelcomeComponent from "../components/Welcome.component";
 import SignUpPage from "../pages/SignUp.page";
 
 export const routes = [
@@ -10,6 +11,10 @@ export const routes = [
   {
     path: "/signup",
     element: <SignUpPage />,
+  },
+  {
+    path: "welcome",
+    element: <WelcomeComponent />,
   },
   {
     path: "*",
