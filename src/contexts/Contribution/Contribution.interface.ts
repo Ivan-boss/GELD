@@ -1,5 +1,5 @@
 export interface IContribution {
-  contributionId: string;
+  id: string;
   startDate: Date;
   endDate: Date;
   name: string;

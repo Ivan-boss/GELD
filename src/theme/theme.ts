@@ -114,7 +114,7 @@ const theme = createTheme({
     adminBackground: "#131313",
     adminElement: "#1D1D1D",
     offWhite: "#A0A0A0",
-    placeholder: LINE,
+    placeholder: "#A0A3BD",
     label: LINE,
     body: "#FFFFFF",
     titleActive: PRIMARY,

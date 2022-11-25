@@ -1,8 +1,8 @@
 const WelcomePage = {
-  whatsUpText: "What's up ",
-  association: "Associations",
-  detailText1: "My contributions",
-  detailText2: "My adhesions",
+  whatsUpText: "What's up, ",
+  associations: " Associations",
+  myContributions: "My contributions",
+  myAdhesions: "My adhesions",
 };
 
 export default WelcomePage;
