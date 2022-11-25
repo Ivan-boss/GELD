@@ -1,7 +1,6 @@
 import { Box, Grid, Slider, Typography } from "@mui/material";
 import { useIntl } from "react-intl";
 import theme from "../theme/theme";
-
 export interface ISummaryComponentProps {
   associationsNumber: number;
   associationConcerned: string;
@@ -20,6 +19,7 @@ const SummaryComponent = ({
           margin: "10px",
           padding: "10px",
           borderRadius: "15px",
+          cursor: "pointer",
           backgroundColor: theme.common.body,
           "&:hover": {
             borderColor: "blueviolet",

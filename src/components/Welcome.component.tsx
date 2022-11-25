@@ -1,7 +1,17 @@
 import Typography from "@mui/material/Typography";
 import { useIntl } from "react-intl";
+import AddIcon from "@mui/icons-material/Add";
 
-import { Box, Grid } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Fab,
+  Dialog,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
+  Button,
+} from "@mui/material";
 import { useState } from "react";
 import theme from "../theme/theme";
 import SummaryComponent from "./Summary.component";
@@ -114,7 +124,11 @@ const WelcomeComponent = () => {
       name: "La rentrée scolaire",
     },
   ]);
+  const [isDialogOpened, setIsDialogOpened] = useState(false);
 
+  const toggleDialog = () => {
+    setIsDialogOpened(!isDialogOpened);
+  };
   return (
     <Box
       sx={{ backgroundColor: theme.common.inputBackground, height: "100vh" }}
@@ -179,6 +193,38 @@ const WelcomeComponent = () => {
                 </>
               );
             })}
+
+        <Fab
+          color="primary"
+          aria-label="add"
+          sx={{ justifySelf: "end" }}
+          onClick={() => {
+            toggleDialog();
+          }}
+        >
+          <AddIcon />
+        </Fab>
+        <Dialog open={isDialogOpened}>
+          <form>
+            <DialogContent>
+              <DialogContentText>
+                <Typography variant="h3" gutterBottom>
+                  Fill the following spaces to add a new card
+                </Typography>
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button
+                onClick={() => {
+                  toggleDialog();
+                }}
+              >
+                Cancel
+              </Button>
+              <Button type="submit">Submit</Button>
+            </DialogActions>
+          </form>
+        </Dialog>
       </Box>
     </Box>
   );
