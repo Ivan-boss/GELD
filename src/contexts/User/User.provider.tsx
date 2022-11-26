@@ -23,7 +23,7 @@ export default function UsersProvider({
   const initialState: IUser = {
     user_id: "dfg45-rgf545",
     user_name: "Cynthia",
-    user_image_ref: "user-img",
+    user_image_ref: "/../src/assets/images/profile.png",
   };
 
   const [userState, userDispatch] = useReducer(userReducer, initialState);

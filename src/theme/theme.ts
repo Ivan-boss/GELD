@@ -78,7 +78,7 @@ declare module "@mui/material/styles" {
   }
 }
 
-const PRIMARY = "#0D203B";
+const PRIMARY = "#0B77DB";
 const LINE = "#E8E8E8";
 const theme = createTheme({
   components: {
@@ -87,9 +87,6 @@ const theme = createTheme({
         root: {
           textTransform: "none",
         },
-        // text: {
-        //   textTransform: "none",
-        // },
       },
     },
   },
@@ -98,13 +95,13 @@ const theme = createTheme({
       main: PRIMARY,
     },
     secondary: {
-      main: "#EF5241",
+      main: "#9E4CEB",
     },
     error: {
-      main: "#4BE4FF",
+      main: "#DD0303",
     },
     success: {
-      main: "#27AE60",
+      main: "#00BA88",
     },
   },
   common: {
@@ -114,10 +111,10 @@ const theme = createTheme({
     adminBackground: "#131313",
     adminElement: "#1D1D1D",
     offWhite: "#A0A0A0",
-    placeholder: "#A0A3BD",
+    placeholder: "#A0A1AC",
     label: LINE,
     body: "#FFFFFF",
-    titleActive: PRIMARY,
+    titleActive: "#172B4D",
     dialogBackground: "#626262",
   },
   typography: {

@@ -17,7 +17,7 @@ export const routes = [
     path: "welcome",
     element: <WelcomeComponent />,
   },
-  { path: "overview", element: <OverviewPage /> },
+  { path: "overview/:name/:id", element: <OverviewPage /> },
   {
     path: "*",
     element: <Navigate to="/" />,
