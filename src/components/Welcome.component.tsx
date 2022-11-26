@@ -17,14 +17,11 @@ import theme from "../theme/theme";
 import SummaryComponent from "./Summary.component";
 import Navbar from "./Navbar.component";
 import DetailsComponent from "./Details.component";
+import { useUsers } from "../contexts/User/User.provider";
 
 const WelcomeComponent = () => {
   let { formatMessage } = useIntl();
-
-  const [user, setUser] = useState({
-    userId: "lfd6df5sger769",
-    userName: "Cynthia",
-  });
+  const { userState, userDispatch } = useUsers();
 
   const [isContributionsSelected, setIsContributionsSelected] = useState(true);
 
@@ -141,7 +138,7 @@ const WelcomeComponent = () => {
         gutterBottom
       >
         {formatMessage({ id: "whatsUpText" })}
-        {user.userName} !
+        {userState.user_name} !
       </Typography>
 
       <Grid container justifyContent="space-between">

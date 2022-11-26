@@ -8,6 +8,7 @@ import { useLanguage } from "./contexts/Language/Language.provider";
 import theme from "./theme/theme";
 import { useRoutes } from "react-router";
 import { routes } from "./routes/routes";
+import UsersProvider from "./contexts/User/User.provider";
 
 function App() {
   const routing = useRoutes(routes);
@@ -27,7 +28,9 @@ function App() {
           draggable
           transition={Flip}
         />
-        {routing}
+        <UsersProvider>
+          <>{routing}</>
+        </UsersProvider>
       </ThemeProvider>
     </IntlProvider>
   );
