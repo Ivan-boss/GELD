@@ -49,7 +49,7 @@ const PaymentDetails = (props: { paymentDetails: IAdhesionPayHistory }) => {
         <Grid item sx={{ backgroundColor: theme.common.body, padding: "10px" }}>
           <Typography align="left" variant="body1">
             {isPaid
-              ? `${formatMessage({ id: "transferOf" })} ${amount}`
+              ? `${formatMessage({ id: "transferOf" })} ${amount}Frs`
               : formatMessage({ id: "failedToContribute" })}
           </Typography>
         </Grid>

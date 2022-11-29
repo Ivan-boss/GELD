@@ -13,6 +13,7 @@ import { useLocation } from "react-router-dom";
 import { useUsers } from "../contexts/User/User.provider";
 import AdhesionHistory from "./AdhesionHistory.component";
 import { IAdhesionPayHistory } from "../contexts/Adhesion/AdhesionPaymentHistory";
+import Dashboard from "./Dashboard.component";
 const TabContainer = () => {
   const { name, id } = useParams();
   const handleTabChange = (
@@ -80,7 +81,11 @@ const TabContainer = () => {
         </Box>
       </Grid>
       <Grid item>
-        {tabIndex === 0 && <Box>dashboard</Box>}
+        {tabIndex === 0 && (
+          <Box>
+            <Dashboard />
+          </Box>
+        )}
         {tabIndex === 1 && (
           <Box>
             <AdhesionHistory adhesionPayHistory={history} />{" "}
